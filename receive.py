@@ -1,0 +1,72 @@
+import socket
+import pygame
+import sys
+from stripvis import *
+
+# --- Configuration (Match these to your sender) ---
+IP = "0.0.0.0"  # Listen on all interfaces
+PORT = 21324     # Must match the PORT in your config.network
+STRIP_LENGTH = 80
+NUM_STRIPS = 3
+
+class RemoteLights:
+    """A dummy container to hold LED data for the visualizer."""
+    def __init__(self, strip_length, num_strips):
+        self.strip_length = strip_length
+        self.num_strips = num_strips
+        # The visualizer expects strip.strip to be [[r, g, b, a], ...]
+        self.strips = [RemoteStrip(strip_length) for _ in range(num_strips)]
+
+class RemoteStrip:
+    def __init__(self, length):
+        self.strip = [[0, 0, 0, 255] for _ in range(length)]
+
+def run_receiver():
+    # 1. Setup Networking
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    sock.bind((IP, PORT))
+    print(f"Listening for LED data on {IP}:{PORT}...")
+
+    # 2. Setup Data and Visualizer
+    lights_data = RemoteLights(STRIP_LENGTH, NUM_STRIPS)
+    visualizer = StripVisualizer(width=50, height=800, lights_obj=lights_data)
+
+    try:
+        while True:
+            # 3. Receive Packet
+            data, addr = sock.recvfrom(4096) # Adjust buffer if strips are very long
+            
+            # 4. Parse Packet (Reverse of stripToBytes)
+            # Index 0: Mode (DRGB = 2)
+            # Index 1: Flags (Realtime = 10)
+            # Index 2+: R, G, B, R, G, B...
+            if len(data) > 2:
+                payload = data[2:]
+                
+                # Flattened list of all pixels across all strips
+                total_pixels = len(payload) // 3
+                
+                for p_idx in range(total_pixels):
+                    # Determine which strip and which LED this belongs to
+                    strip_idx = p_idx // STRIP_LENGTH
+                    led_idx = p_idx % STRIP_LENGTH
+                    
+                    if strip_idx < NUM_STRIPS:
+                        r = payload[p_idx * 3]
+                        g = payload[p_idx * 3 + 1]
+                        b = payload[p_idx * 3 + 2]
+                        # Update the data object the visualizer is watching
+                        # We keep Alpha at 255 because your sender only sends RGB
+                        lights_data.strips[strip_idx].strip[led_idx] = [r, g, b, 255]
+
+            # 5. Update Visualizer
+            visualizer.update()
+
+    except KeyboardInterrupt:
+        print("\nClosing receiver...")
+    finally:
+        sock.close()
+        pygame.quit()
+
+if __name__ == "__main__":
+    run_receiver()

@@ -1,0 +1,1 @@
+# Defines cross strip color functions Lights -> Lights
