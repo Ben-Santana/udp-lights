@@ -5,6 +5,7 @@ strip = [[120, 120, 120] for i in range(255)]
 
 def updateLights(udp_bytes):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 1024)
     sock.sendto(udp_bytes, (IP, PORT))
 
 def stripToBytes(leds):

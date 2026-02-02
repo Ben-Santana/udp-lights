@@ -1,5 +1,5 @@
 # Defines cross strip effect functions Lights -> Lights
-from fx.mono.effects import *
+from fx.mono.effects import fadeInOut, swipe
 
 def polySinWave(lit, offset=1):
     for i in range(lit.num_strips):
