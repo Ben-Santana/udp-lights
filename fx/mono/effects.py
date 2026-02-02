@@ -39,8 +39,17 @@ def chase(strip, bpm=default_bpm, length=10, lifetime = 0.5):
 
 
 # strobe
-def strobe():
-    pass
+def strobe(strip, bpm=default_bpm * 10, offset=0):
+    new_strip = strip
+
+    if (time.time() + offset/100) % (60.0/bpm) < (30.0/bpm):
+        for led in new_strip:
+            led[3] = 255
+    else:
+        for led in new_strip:
+            led[3] = 0
+    
+    return new_strip
 
 # ------ FOR POLY FUNCTIONS --------
 

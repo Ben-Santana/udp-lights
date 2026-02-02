@@ -1,1 +1,1 @@
-default_bpm=60
+default_bpm=130

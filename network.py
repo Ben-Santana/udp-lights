@@ -1,12 +1,23 @@
 import socket
 from config.network import *
+import time
 
-strip = [[120, 120, 120] for i in range(255)]
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+try:
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_PRIORITY, 6)
+except:
+    pass
+
+sock.setsockopt(socket.IPPROTO_IP, socket.IP_TOS, 0x10)
+
 
 def updateLights(udp_bytes):
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 1024)
     sock.sendto(udp_bytes, (IP, PORT))
+    socket.gethostbyname('')
+
+def keepWifiAwake():
+    pass
 
 def stripToBytes(leds):
     udp_bytes = bytearray()
