@@ -1,5 +1,4 @@
 import socket
-from config.network import *
 import time
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -12,18 +11,15 @@ except:
 sock.setsockopt(socket.IPPROTO_IP, socket.IP_TOS, 0x10)
 
 
-def updateLights(udp_bytes):
-    sock.sendto(udp_bytes, (IP, PORT))
+def updateLights(lights, udp_bytes):
+    sock.sendto(udp_bytes, (lights.ip_addr, lights.port))
     socket.gethostbyname('')
-
-def keepWifiAwake():
-    pass
 
 def stripToBytes(leds):
     udp_bytes = bytearray()
 
     udp_bytes.append(2) # DRGB
-    udp_bytes.append(10) # Don't leave realtime mode
+    udp_bytes.append(255) # Don't leave realtime mode
 
     for i in range(len(leds)):
         # Bytes -> [...][Index, R, G, B][...]

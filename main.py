@@ -7,25 +7,23 @@ from network import *
 import time
 from config.main import *
 
-VIS = True
+VIS = False
 SEND = True
 
 
 def main():
-    lit = Lights(num_strips=3)
 
-    lit.setStrip(0, sinWave, [], rainbow, [])
-    lit.setStrip(1, chase, [60, 10, 0.2], rainbow, [])
-    lit.setStrip(2, sinWave, [], rainbow, [])
+    # +===+ EXAMPLE +===+
 
-    # lit.setStrip(0, rainbow, [], strobe, [60 * 10, 10])
-    # lit.setStrip(1, rainbow, [], strobe, [60 * 10, 50])
-    # lit.setStrip(2, rainbow, [], strobe, [60 * 10, 80])
+    lit = Lights()
 
-    # lit.setStrip(0, colorFunc=rainbow)
-    # lit.setStrip(1, colorFunc=rainbow)
-    # lit.setStrip(2, colorFunc=rainbow)
+    lit.setStrip(0, sinWave, [], rainbow)
+    lit.setStrip(1, sinWave, [], rainbow)
+    lit.setStrip(2, sinWave, [], rainbow)
+
     # polySinWave(lit)
+
+    # +===+ ======= +===+
 
     next_frame_time = time.perf_counter()
 
@@ -34,6 +32,7 @@ def main():
         from stripvis import StripVisualizer
         svs = StripVisualizer(30, 600, lit)
 
+    # used to store next time we will update the lights
     next_frame_time = time.perf_counter()
 
     while True:
@@ -43,7 +42,7 @@ def main():
             if VIS:
                 svs.update()
             if SEND:
-                updateLights(stripToBytes(lit.rgb()))
+                updateLights(lit, stripToBytes(lit.rgb()))
             next_frame_time += frame_duration
 
 

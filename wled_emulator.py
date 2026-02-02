@@ -5,7 +5,7 @@ import sys
 # --- Configuration (Match these to your sender) ---
 IP = "0.0.0.0"  # Listen on all interfaces
 PORT = 21324     # Must match the PORT in your config.network
-STRIP_LENGTH = 80
+STRIP_LENGTH = 70
 NUM_STRIPS = 3
 
 

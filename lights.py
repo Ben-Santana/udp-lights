@@ -1,10 +1,12 @@
 from strip import Strip
 
 class Lights:
-    def __init__(self, strip_length=80, num_strips=3):
+    def __init__(self, strip_length=70, num_strips=3, ip_addr="127.0.0.1", port=21324):
         self.num_strips = num_strips
         self.strip_length = strip_length
         self.strips = [Strip(strip_length) for _ in range(num_strips)]
+        self.ip_addr = ip_addr
+        self.port = port
     
     # update strips
     def update(self):
