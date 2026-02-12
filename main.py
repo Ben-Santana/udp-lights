@@ -7,7 +7,7 @@ from network import *
 import time
 from config.main import *
 
-VIS = False
+VIS = True
 SEND = True
 
 
