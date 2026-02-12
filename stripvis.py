@@ -1,3 +1,8 @@
+#
+# BEWARE, VIBECODED!
+#
+
+
 import pygame
 import sys
 

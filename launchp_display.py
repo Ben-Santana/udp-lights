@@ -13,10 +13,6 @@ class LaunchpadGUI(ctk.CTk):
         self.geometry(f"{self.window_size}x{self.window_size}")
         self.resizable(False, False)
         self.configure(fg_color="black")
-        
-        # Note for Hyprland: You may need to add this to your hyprland.conf:
-        # windowrule = float, ^(Launchpad MK2)$
-        # windowrule = size 540 540, ^(Launchpad MK2)$
 
         self.color_palette = {
             0: "#242424", 1: "#7e7e7e", 2: "#b2b2b2", 3: "#ffffff",

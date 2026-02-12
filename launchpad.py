@@ -45,7 +45,6 @@ if __name__ == "__main__":
 
     while True:
         for msg in lp.get_midi():
-            # time.sleep(0.01)
             if msg["on"]:
                 if lp.msg_to_grid(msg)[1]:
                     lp.msg_to_grid(msg)[1] = False
