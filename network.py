@@ -19,7 +19,7 @@ def stripToBytes(leds):
     udp_bytes = bytearray()
 
     udp_bytes.append(2) # DRGB
-    udp_bytes.append(255) # Don't leave realtime mode
+    udp_bytes.append(10) # Don't leave realtime mode
 
     for i in range(len(leds)):
         # Bytes -> [...][Index, R, G, B][...]

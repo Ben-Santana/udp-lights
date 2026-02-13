@@ -1,24 +1,25 @@
 import mido
 import time
-
+import json
 
 class Launchpad:
 
     def __init__(self):
-        self.grid = [[[3, False] for _ in range(9)] for _ in range(9)]
+        self.grid = [[[3, False, None, None, None] for _ in range(9)] for _ in range(9)]
         self.inport = mido.open_input('Launchpad MK2:Launchpad MK2 MIDI 1 24:0')
         self.outport = mido.open_output('Launchpad MK2:Launchpad MK2 MIDI 1 24:0')
 
     def get_midi(self):
-        inputs = []
-        for msg in self.inport.iter_pending():
-            inputs.append({"button": [int((msg.note - 10) / 10), (msg.note % 10) - 1], "on": msg.velocity==127})
-        return inputs
+            inputs = []
+            for msg in self.inport.iter_pending():
+                if hasattr(msg, "note"):
+                    inputs.append({"button": [int((msg.note - 10) / 10), (msg.note % 10) - 1], "on": msg.velocity==127})
+            return inputs
 
     def msg_to_grid(self, msg):
         return lp.grid[msg["button"][0]][msg["button"][1]]
 
-    def update_button_colors(self):
+    def update(self):
         for i in range(9):
             for j in range(9):
                 if self.grid[i][j][1]:
@@ -36,6 +37,23 @@ class Launchpad:
     def close_ports(self):
         self.inport.close()
         self.outport.close()
+
+    def load_grid_from_file(self, file_path):
+        try:
+            with open(file_path, 'r') as file:
+                data = json.load(file)
+                self.grid = data
+        except FileNotFoundError:
+            print(f"File not found: {file_path}")
+        except json.JSONDecodeError:
+            print(f"Invalid JSON data in file: {file_path}")
+    
+    def save_grid_to_file(self, file_path):
+        try:
+            with open(file_path, 'w') as file:
+                json.dump(self.grid, file, indent=4)
+        except IOError:
+            print(f"Error writing to file: {file_path}")
 
 
 

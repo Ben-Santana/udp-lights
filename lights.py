@@ -1,7 +1,7 @@
 from strip import Strip
 
 class Lights:
-    def __init__(self, strip_length=70, num_strips=3, ip_addr="127.0.0.1", port=21324):
+    def __init__(self, strip_length=70, num_strips=3, ip_addr="192.168.0.101", port=21324):
         self.num_strips = num_strips
         self.strip_length = strip_length
         self.strips = [Strip(strip_length) for _ in range(num_strips)]
@@ -19,13 +19,13 @@ class Lights:
                 effect_args=None,
                 colorFunc=None, 
                 color_args=None):
-        if effectFunc:
+        if not effectFunc == None:
             self.strips[index].effectFunc = effectFunc
-        if effect_args:
+        if not effect_args == None:
             self.strips[index].effect_args = effect_args
-        if colorFunc:
+        if not colorFunc == None:
             self.strips[index].colorFunc = colorFunc
-        if color_args:
+        if not color_args == None:
             self.strips[index].color_args = color_args
 
 

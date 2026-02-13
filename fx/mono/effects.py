@@ -9,7 +9,7 @@ def idleEffect(strip):
     return strip
 
 # sin
-def sinWave(strip, bpm=default_bpm * 2, wave_length=3):
+def sinWave(strip, bpm=default_bpm, wave_length=5):
     new_strip = strip
 
     for i in range(len(new_strip)):
