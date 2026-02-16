@@ -1,11 +1,11 @@
 from strip import Strip
 
 class Lights:
-    def __init__(self, strip_length=70, num_strips=3, ip_addr="192.168.0.101", port=21324):
+    def __init__(self, strip_length=80, num_strips=6, wled_addr = {"192.168.0.101": [0, 1, 2], "192.168.0.100": [3, 4, 5]}, port=21324):
         self.num_strips = num_strips
         self.strip_length = strip_length
         self.strips = [Strip(strip_length) for _ in range(num_strips)]
-        self.ip_addr = ip_addr
+        self.wled_addr = wled_addr
         self.port = port
     
     # update strips
@@ -19,19 +19,11 @@ class Lights:
                 effect_args=None,
                 colorFunc=None, 
                 color_args=None):
-        if not effectFunc == None:
+        if effectFunc is not None:
             self.strips[index].effectFunc = effectFunc
-        if not effect_args == None:
+        if effect_args is not None:
             self.strips[index].effect_args = effect_args
-        if not colorFunc == None:
+        if colorFunc is not None:
             self.strips[index].colorFunc = colorFunc
-        if not color_args == None:
+        if color_args is not None:
             self.strips[index].color_args = color_args
-
-
-    # returns [..., [r, g, b], ...]
-    def rgb(self):
-        temp = []
-        for s in range(self.num_strips):
-            temp += self.strips[s].rgb()
-        return temp

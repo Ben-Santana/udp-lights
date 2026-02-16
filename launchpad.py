@@ -6,8 +6,17 @@ class Launchpad:
 
     def __init__(self):
         self.grid = [[[3, False, None, None, None] for _ in range(9)] for _ in range(9)]
-        self.inport = mido.open_input('Launchpad MK2:Launchpad MK2 MIDI 1 24:0')
-        self.outport = mido.open_output('Launchpad MK2:Launchpad MK2 MIDI 1 24:0')
+
+        self.inport = None
+        self.outport = None
+
+        for midi in mido.get_input_names():
+            if 'Launchpad' in midi:
+                self.inport = mido.open_input(midi)
+                self.outport = mido.open_output(midi)
+
+        if self.inport is None:
+            raise IOError('No launchpad detected')
 
     def get_midi(self):
             inputs = []

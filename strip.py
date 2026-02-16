@@ -10,7 +10,6 @@ class Strip:
         self.color_args = []
         self.effect_args = []
         
-
     def _applyEffect(self):
         self.strip = self.effectFunc(self.strip, *self.effect_args)
 

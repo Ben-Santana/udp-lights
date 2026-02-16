@@ -4,28 +4,28 @@
             56,
             true,
             null,
-            "[[0, None, None, solid, [255, 50, 50]], [1, None, None, solid, [255, 50, 50]], [2, None, None, solid, [255, 50, 50]]]",
+            "[[0, None, None, solid, [255, 50, 50]], [1, None, None, solid, [255, 50, 50]], [2, None, None, solid, [255, 50, 50]], [3, None, None, solid, [255, 50, 50]], [4, None, None, solid, [255, 50, 50]], [5, None, None, solid, [255, 50, 50]]]",
             null
         ],
         [
             25,
             true,
             null,
-            "[[0, None, None, solid, [20, 255, 20]], [1, None, None, solid, [20, 255, 20]], [2, None, None, solid, [20, 255, 20]]]",
+            "[[0, None, None, solid, [20, 255, 20]], [1, None, None, solid, [20, 255, 20]], [2, None, None, solid, [20, 255, 20]], [3, None, None, solid, [20, 255, 20]], [4, None, None, solid, [20, 255, 20]], [5, None, None, solid, [20, 255, 20]]]",
             null
         ],
         [
             13,
             true,
             null,
-            "[[0, None, None, solid, [255, 255, 20]], [1, None, None, solid, [255, 255, 20]], [2, None, None, solid, [255, 255, 20]]]",
+            "[[0, None, None, solid, [255, 255, 20]], [1, None, None, solid, [255, 255, 20]], [2, None, None, solid, [255, 255, 20]], [3, None, None, solid, [255, 255, 20]], [4, None, None, solid, [255, 255, 20]], [5, None, None, solid, [255, 255, 20]]]",
             null
         ],
         [
-            3,
-            false,
+            1,
+            true,
             null,
-            null,
+            "[[0, None, None, solid, [0, 0, 0]], [1, None, None, solid, [0, 0, 0]], [2, None, None, solid, [0, 0, 0]], [3, None, None, solid, [0, 0, 0]], [4, None, None, solid, [0, 0, 0]], [5, None, None, solid, [0, 0, 0]]]",
             null
         ],
         [
@@ -69,21 +69,151 @@
             5,
             true,
             null,
-            "[[0, None, None, solid, [255, 0, 0]], [1, None, None, solid, [255, 0, 0]], [2, None, None, solid, [255, 0, 0]]]",
+            "[[0, None, None, solid, [255, 0, 0]], [1, None, None, solid, [255, 0, 0]], [2, None, None, solid, [255, 0, 0]], [3, None, None, solid, [255, 0, 0]], [4, None, None, solid, [255, 0, 0]], [5, None, None, solid, [255, 0, 0]]]",
             null
         ],
         [
             37,
             true,
             null,
-            "[[0, None, None, solid, [0, 0, 255]], [1, None, None, solid, [0, 0, 255]], [2, None, None, solid, [0, 0, 255]]]",
+            "[[0, None, None, solid, [0, 0, 255]], [1, None, None, solid, [0, 0, 255]], [2, None, None, solid, [0, 0, 255]], [3, None, None, solid, [0, 0, 255]], [4, None, None, solid, [0, 0, 255]], [5, None, None, solid, [0, 0, 255]]]",
             null
         ],
         [
             23,
             true,
             null,
-            "[[0, None, None, solid, [0, 255, 0]], [1, None, None, solid, [0, 255, 0]], [2, None, None, solid, [0, 255, 0]]]",
+            "[[0, None, None, solid, [0, 255, 0]], [1, None, None, solid, [0, 255, 0]], [2, None, None, solid, [0, 255, 0]], [3, None, None, solid, [0, 255, 0]], [4, None, None, solid, [0, 255, 0]], [5, None, None, solid, [0, 255, 0]]]",
+            null
+        ],
+        [
+            3,
+            true,
+            null,
+            "[[0, None, None, rainbow, []], [1, None, None, rainbow, []], [2, None, None, rainbow, []], [3, None, None, rainbow, []], [4, None, None, rainbow, []], [5, None, None, rainbow, []]]",
+            null
+        ],
+        [
+            3,
+            false,
+            null,
+            null,
+            null
+        ],
+        [
+            3,
+            false,
+            null,
+            null,
+            null
+        ],
+        [
+            38,
+            true,
+            null,
+            null,
+            "polySwipe(lights, bpm/3)"
+        ],
+        [
+            38,
+            true,
+            null,
+            null,
+            "polySwipeBack(lights, bpm/3)"
+        ],
+        [
+            0,
+            false,
+            null,
+            null,
+            null
+        ]
+    ],
+    [
+        [
+            3,
+            false,
+            null,
+            null,
+            null
+        ],
+        [
+            0,
+            false,
+            null,
+            null,
+            null
+        ],
+        [
+            3,
+            false,
+            null,
+            null,
+            null
+        ],
+        [
+            3,
+            false,
+            null,
+            null,
+            null
+        ],
+        [
+            3,
+            false,
+            null,
+            null,
+            null
+        ],
+        [
+            3,
+            false,
+            null,
+            null,
+            null
+        ],
+        [
+            10,
+            true,
+            null,
+            null,
+            "polySinWave(lights, bpm, 1)"
+        ],
+        [
+            10,
+            true,
+            null,
+            null,
+            "polySinWave(lights, bpm, -1)"
+        ],
+        [
+            3,
+            false,
+            null,
+            null,
+            null
+        ]
+    ],
+    [
+        [
+            3,
+            false,
+            null,
+            null,
+            null
+        ],
+        [
+            3,
+            false,
+            null,
+            null,
+            null
+        ],
+        [
+            3,
+            false,
+            null,
+            null,
             null
         ],
         [
@@ -132,153 +262,51 @@
     [
         [
             3,
-            false,
+            true,
             null,
-            null,
+            "[[0, strobe, [bpm * 10], None, None]]",
             null
         ],
         [
             3,
             true,
             null,
-            "[[0, None, None, rainbow, []], [1, None, None, rainbow, []], [2, None, None, rainbow, []]]",
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ]
-    ],
-    [
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ]
-    ],
-    [
-        [
-            3,
-            true,
-            null,
-            "[[0, strobe, [], None, None]]",
+            "[[1, strobe, [bpm * 10], None, None]]",
             null
         ],
         [
             3,
             true,
             null,
-            "[[1, strobe, [], None, None]]",
+            "[[2, strobe, [bpm * 10], None, None]]",
             null
         ],
         [
             3,
             true,
             null,
-            "[[2, strobe, [], None, None]]",
+            "[[3, strobe, [bpm * 10], None, None]]",
+            null
+        ],
+        [
+            3,
+            true,
+            null,
+            "[[4, strobe, [bpm * 10], None, None]]",
+            null
+        ],
+        [
+            3,
+            true,
+            null,
+            "[[5, strobe, [bpm * 10], None, None]]",
+            null
+        ],
+        [
+            3,
+            true,
+            null,
+            "[[0, strobe, [bpm * 10], None, None], [1, strobe, [bpm * 10], None, None], [2, strobe, [bpm * 10], None, None], [3, strobe, [bpm * 10], None, None], [4, strobe, [bpm * 10], None, None], [5, strobe, [bpm * 10], None, None]]",
             null
         ],
         [
@@ -289,39 +317,11 @@
             null
         ],
         [
-            3,
-            false,
+            45,
+            true,
             null,
             null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
+            "add_to_bpm(-10)"
         ]
     ],
     [
@@ -329,64 +329,64 @@
             33,
             true,
             null,
-            "[[0, chase, [60, 20, 0.5], None, None]]",
+            "[[0, chase, [bpm, 20, 0.5], None, None]]",
             null
         ],
         [
             33,
             true,
             null,
-            "[[1, chase, [60, 20, 0.5], None, None]]",
+            "[[1, chase, [bpm, 20, 0.5], None, None]]",
             null
         ],
         [
             33,
             true,
             null,
-            "[[2, chase, [60, 20, 0.5], None, None]]",
+            "[[2, chase, [bpm, 20, 0.5], None, None]]",
             null
         ],
         [
-            3,
+            33,
+            true,
+            null,
+            "[[3, chase, [bpm, 20, 0.5], None, None]]",
+            null
+        ],
+        [
+            33,
+            true,
+            null,
+            "[[4, chase, [bpm, 20, 0.5], None, None]]",
+            null
+        ],
+        [
+            33,
+            true,
+            null,
+            "[[5, chase, [bpm, 20, 0.5], None, None]]",
+            null
+        ],
+        [
+            33,
+            true,
+            null,
+            "[[0, chase, [bpm, 20, 0.5], None, None], [1, chase, [bpm, 20, 0.5], None, None], [2, chase, [bpm, 20, 0.5], None, None], [3, chase, [bpm, 20, 0.5], None, None], [4, chase, [bpm, 20, 0.5], None, None], [5, chase, [bpm, 20, 0.5], None, None]]",
+            null
+        ],
+        [
+            0,
             false,
             null,
             null,
             null
         ],
         [
-            37,
-            false,
+            46,
+            true,
             null,
             null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
+            "add_to_bpm(-5)"
         ]
     ],
     [
@@ -412,46 +412,46 @@
             null
         ],
         [
-            3,
-            false,
+            9,
+            true,
             null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
+            "[[3, pulse, [time.time(), 10], None, None]]",
             null
         ],
         [
             9,
             true,
             null,
-            "[[0, pulse, [time.time(), 10], None, None], [1, pulse, [time.time(), 10], None, None], [2, pulse, [time.time(), 10], None, None]]",
+            "[[4, pulse, [time.time(), 10], None, None]]",
             null
         ],
         [
-            3,
+            9,
+            true,
+            null,
+            "[[5, pulse, [time.time(), 10], None, None]]",
+            null
+        ],
+        [
+            9,
+            true,
+            null,
+            "[[0, pulse, [time.time(), 10], None, None], [1, pulse, [time.time(), 10], None, None], [2, pulse, [time.time(), 10], None, None], [3, pulse, [time.time(), 10], None, None], [4, pulse, [time.time(), 10], None, None], [5, pulse, [time.time(), 10], None, None]]",
+            null
+        ],
+        [
+            10,
             false,
             null,
             null,
             null
         ],
         [
-            3,
-            false,
+            4,
+            true,
             null,
             null,
-            null
+            "add_to_bpm(5)"
         ]
     ],
     [
@@ -459,86 +459,86 @@
             57,
             true,
             null,
-            "[[0, sinWave, [], None, None]]",
+            "[[0, sinWave, [bpm], None, None]]",
             null
         ],
         [
             57,
             true,
             null,
-            "[[1, sinWave, [], None, None]]",
+            "[[1, sinWave, [bpm], None, None]]",
             null
         ],
         [
             57,
             true,
             null,
-            "[[2, sinWave, [], None, None]]",
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
+            "[[2, sinWave, [bpm], None, None]]",
             null
         ],
         [
             57,
             true,
             null,
-            "[[0, sinWave, [], None, None], [1, sinWave, [], None, None], [2, sinWave, [], None, None]]",
+            "[[3, sinWave, [bpm], None, None]]",
             null
         ],
         [
-            3,
+            57,
+            true,
+            null,
+            "[[4, sinWave, [bpm], None, None]]",
+            null
+        ],
+        [
+            57,
+            true,
+            null,
+            "[[5, sinWave, [bpm], None, None]]",
+            null
+        ],
+        [
+            57,
+            true,
+            null,
+            "[[0, sinWave, [bpm], None, None], [1, sinWave, [bpm], None, None], [2, sinWave, [bpm], None, None], [3, sinWave, [bpm], None, None], [4, sinWave, [bpm], None, None], [5, sinWave, [bpm], None, None]]",
+            null
+        ],
+        [
+            0,
             false,
             null,
             null,
             null
         ],
         [
-            3,
-            false,
+            5,
+            true,
             null,
             null,
-            null
+            "add_to_bpm(10)"
         ]
     ],
     [
         [
-            58,
+            3,
             false,
             null,
-            "[[0, sinWave, [], rainbow, []]]",
+            null,
             null
         ],
         [
-            58,
+            3,
             false,
             null,
-            "[[1, sinWave, [], rainbow, []]]",
+            null,
             null
         ],
         [
-            58,
+            3,
             false,
             null,
-            "[[2, sinWave, [], rainbow, []]]",
+            null,
             null
         ],
         [

@@ -1,26 +1,32 @@
+import ast
 import time
 from launchpad import Launchpad
 from launchpad_gui import LaunchpadGUI
 from lights import Lights
 
-# might not be needed
 from fx.mono.effects import *
 from fx.mono.colors import *
 from fx.poly.effects import *
 from fx.poly.colors import *
 from network import *
 
-import ast
+# +=======+ Config +=======+ #
 
-VIS = False
-SEND = True
-
+VIS = True # display pygame visualizer of lights
+SEND = True # send udp / http packets to WLED servers
+num_strips = 6 # total number of led strips
 fps = 60.0
+bpm = 120
+wled_addr = {"192.168.0.101": [0, 1, 2], "192.168.0.100": [3, 4, 5]} # mapping strips to wled servers (0 indexed)
+
+# +========================+ #
+
 frame_duration = 1.0 / fps
 
+
 def handle_http(input_str):
-    """Placeholder for HTTP logic."""
-    print(f"Executing HTTP Request to: {data}")
+    # TODO: handle http requests (take a look it you can set the lights to follow WLED presets through UDP messaages)
+    pass
 
 # [[setStrip inputs], ..., [setStrip inputs]]
 def handle_udp(input_string, lights):
@@ -28,11 +34,11 @@ def handle_udp(input_string, lights):
 
     data = eval(input_string)
 
-    # Check if the result is a list
+    # check if the result is a list
     if not isinstance(data, list):
         raise ValueError("Input is not a list structure.")
 
-    # Check if it is 2D (all elements are lists)
+    # check if it is 2D (all elements are lists)
     if not all(isinstance(item, list) for item in data):
         raise ValueError("Input is a 1D list, but a 2D list is required.")
 
@@ -40,14 +46,18 @@ def handle_udp(input_string, lights):
         index, ef, ea, cf, ca = command
         lights.setStrip(index, ef, ea, cf, ca)
 
+def add_to_bpm(amount):
+    global bpm
+    bpm += amount
+
 def main():
-    # Initialize the hardware and the GUI
     lp = Launchpad()
     gui = LaunchpadGUI(lp)
-    lights = Lights()
+    lights = Lights(num_strips=num_strips, wled_addr=wled_addr)
 
-    for i in range(3):
-        lights.setStrip(i, chase, [], rainbow, [])
+    # default start effect for lights
+    for i in range(num_strips):
+        lights.setStrip(i, chase, [bpm], rainbow, [])
     
     print("Main loop started. Press Ctrl+C to exit.")
 
@@ -56,49 +66,47 @@ def main():
     if VIS:
         from stripvis import StripVisualizer
         svs = StripVisualizer(30, 600, lights)
-    
+
+    # +=====+ Main Loop +=====+ #
     try:
         while True:
+            # time for frame rate management
             current_time = time.perf_counter()
-            # 1. Get MIDI inputs: returns [button_coords, on_bool]
-            # Coordinates are [row, col]
+
+            # get midi inputs from launchpad
             midi_data = lp.get_midi()
             
+            # loop through and process midi input messages
             for msg in midi_data:
                 row, col = msg["button"]
                 is_pressed = msg["on"]
                 
-                # We only trigger logic when the button is pressed (True)
                 if is_pressed:
-                    # Retrieve the configuration for this specific button
-                    # Format: [color, is_on, action_str, id_str, tag_str]
                     btn_config = lp.grid[row][col]
-                    color, active, http_val, udp_val, tag_val = btn_config
-                    
-                    # Check if the button is enabled in the database
+                    color, active, http_val, udp_val, func = btn_config
+                
                     if active:
-                        # Logic: Check HTTP first, then UDP
                         if http_val is not None:
                             handle_http(http_val)
                         
                         if udp_val is not None:
                             handle_udp(udp_val, lights)
                         
-                        # Note: the last value is currently ignored per requirements.
+                        if func is not None:
+                            eval(func)
 
-            # 2. Update the hardware Launchpad LEDs
+            # update the launchpad and gui
             lp.update()
-            
-            # 3. Update the GUI visuals and handle window events
             gui.sync()
 
-            # Update lights
+            # update lights
             if current_time >= next_frame_time:
                 lights.update()
                 if VIS:
                     svs.update()
                 if SEND:
-                    updateLights(lights, stripToBytes(lights.rgb()))
+                    for ip, strips in lights.wled_addr.items():
+                        sendUDP(ip, lights.port, lightToBytes(lights, strips))
                 next_frame_time += frame_duration
             
             # Small sleep to prevent high CPU usage

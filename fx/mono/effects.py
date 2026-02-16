@@ -1,7 +1,6 @@
 # Defines effect functions strip[] -> strip[] modifies alpha values
 import time
 import math
-from config.effects import *
 import random
 
 # idle
@@ -9,7 +8,7 @@ def idleEffect(strip):
     return strip
 
 # sin
-def sinWave(strip, bpm=default_bpm, wave_length=5):
+def sinWave(strip, bpm, wave_length=5):
     new_strip = strip
 
     for i in range(len(new_strip)):
@@ -18,7 +17,7 @@ def sinWave(strip, bpm=default_bpm, wave_length=5):
     return new_strip
 
 # chase
-def chase(strip, bpm=default_bpm, length=10, lifetime = 0.5):
+def chase(strip, bpm, length=10, lifetime = 0.5):
     new_strip = strip
 
     b = 60 / bpm # amount of time between led peaks (sec)
@@ -34,7 +33,7 @@ def chase(strip, bpm=default_bpm, length=10, lifetime = 0.5):
 
 
 # rain
-def rain(strip, bpm=default_bpm * 3, drop_length=20, density=0.5):
+def rain(strip, bpm, drop_length=20, density=0.5):
     new_strip = strip
     n = len(new_strip)
     
@@ -57,7 +56,7 @@ def rain(strip, bpm=default_bpm * 3, drop_length=20, density=0.5):
     return new_strip
 
 # bounce
-def bounce(strip, bpm=default_bpm, width=4):
+def bounce(strip, bpm, width=4):
     new_strip = strip
     n = len(new_strip)
     
@@ -75,7 +74,7 @@ def bounce(strip, bpm=default_bpm, width=4):
     return new_strip
 
 # strobe
-def strobe(strip, bpm=default_bpm * 10, offset=0):
+def strobe(strip, bpm, offset=0):
     new_strip = strip
 
     if (time.time() + offset/100) % (60.0/bpm) < (30.0/bpm):
@@ -88,7 +87,7 @@ def strobe(strip, bpm=default_bpm * 10, offset=0):
     return new_strip
 
 # pulse
-def pulse(strip, start_time, speed=5, bpm=default_bpm):
+def pulse(strip, start_time, speed=5):
     new_strip = strip
     
     alpha = 1 / (((time.time() - start_time) * speed) + 0.8)
@@ -101,14 +100,14 @@ def pulse(strip, start_time, speed=5, bpm=default_bpm):
 # ------ FOR POLY FUNCTIONS --------
 
 # fade in out
-def fadeInOut(strip, bpm=default_bpm, offset=0):
+def fadeInOut(strip, bpm, offset=0):
     new_strip = strip
     for led in new_strip:
         led[3] = (math.sin(2 * math.pi * (time.time() / 60) * bpm + offset) + 1)/2 * 255
     return new_strip
 
 
-def swipe(strip, bpm=default_bpm, rank=0, total=3):
+def swipe(strip, bpm, rank=0, total=3):
     new_strip = strip
 
     cycleTime = 60 * 2/(bpm)
@@ -123,7 +122,7 @@ def swipe(strip, bpm=default_bpm, rank=0, total=3):
         
     return new_strip
 
-def radialPulse(strip, bpm=default_bpm, strip_idx=0, center_x=0, center_y=0, width=5):
+def radialPulse(strip, bpm, strip_idx=0, center_x=0, center_y=0, width=5):
     new_strip = strip
     t = (time.time() * (bpm / 60)) % 15 # The "radius" of the ripple expanding
     
@@ -144,7 +143,7 @@ def radialPulse(strip, bpm=default_bpm, strip_idx=0, center_x=0, center_y=0, wid
             
     return new_strip
 
-def diamondPulse(strip, bpm=default_bpm, strip_idx=0, center_x=0, center_y=0, width=4):
+def diamondPulse(strip, bpm, strip_idx=0, center_x=0, center_y=0, width=4):
     new_strip = strip
     # t is our expanding radius
     t = (time.time() * (bpm / 60) * 8) % 60 
