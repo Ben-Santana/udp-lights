@@ -1,10 +1,10 @@
 [
     [
         [
-            56,
+            13,
             true,
             null,
-            "[[0, None, None, solid, [255, 50, 50]], [1, None, None, solid, [255, 50, 50]], [2, None, None, solid, [255, 50, 50]], [3, None, None, solid, [255, 50, 50]], [4, None, None, solid, [255, 50, 50]], [5, None, None, solid, [255, 50, 50]]]",
+            "[[0, None, None, 'solid', [255.0, 105.0, 0.0]], [1, None, None, 'solid', [255.0, 105.0, 0.0]], [2, None, None, 'solid', [255.0, 105.0, 0.0]], [3, None, None, 'solid', [255.0, 105.0, 0.0]], [4, None, None, 'solid', [255.0, 105.0, 0.0]], [5, None, None, 'solid', [255.0, 105.0, 0.0]]]",
             null
         ],
         [
@@ -15,10 +15,10 @@
             null
         ],
         [
-            13,
+            32,
             true,
             null,
-            "[[0, None, None, solid, [255, 255, 20]], [1, None, None, solid, [255, 255, 20]], [2, None, None, solid, [255, 255, 20]], [3, None, None, solid, [255, 255, 20]], [4, None, None, solid, [255, 255, 20]], [5, None, None, solid, [255, 255, 20]]]",
+            "[[0, None, None, 'solid', [70.0, 70.0, 255.0]], [1, None, None, 'solid', [70.0, 70.0, 255.0]], [2, None, None, 'solid', [70.0, 70.0, 255.0]], [3, None, None, 'solid', [70.0, 70.0, 255.0]], [4, None, None, 'solid', [70.0, 70.0, 255.0]], [5, None, None, 'solid', [70.0, 70.0, 255.0]]]",
             null
         ],
         [
@@ -29,10 +29,10 @@
             null
         ],
         [
-            3,
-            false,
+            58,
+            true,
             null,
-            null,
+            "[[0, None, None, 'solid', [255.0, 0.0, 255.0]], [1, None, None, 'solid', [255.0, 0.0, 255.0]], [2, None, None, 'solid', [255.0, 0.0, 255.0]], [3, None, None, 'solid', [255.0, 0.0, 255.0]], [4, None, None, 'solid', [255.0, 0.0, 255.0]], [5, None, None, 'solid', [255.0, 0.0, 255.0]]]",
             null
         ],
         [
@@ -43,17 +43,17 @@
             null
         ],
         [
-            3,
-            false,
+            29,
+            true,
             null,
-            null,
+            "[[0, 'fadeInOut', [bpm, 0], None, None], [1, 'fadeInOut', [bpm, 0], None, None], [2, 'fadeInOut', [bpm, 0], None, None], [3, 'fadeInOut', [bpm, 0], None, None], [4, 'fadeInOut', [bpm, 0], None, None], [5, 'fadeInOut', [bpm, 0], None, None]]",
             null
         ],
         [
-            3,
-            false,
+            44,
+            true,
             null,
-            null,
+            "[[0, 'rain', [bpm, 20, 10], None, None], [1, 'rain', [bpm, 20, 10], None, None], [2, 'rain', [bpm, 20, 10], None, None], [3, 'rain', [bpm, 20, 10], None, None], [4, 'rain', [bpm, 20, 10], None, None], [5, 'rain', [bpm, 20, 10], None, None]]",
             null
         ],
         [
@@ -66,45 +66,45 @@
     ],
     [
         [
-            5,
+            9,
             true,
             null,
-            "[[0, None, None, solid, [255, 0, 0]], [1, None, None, solid, [255, 0, 0]], [2, None, None, solid, [255, 0, 0]], [3, None, None, solid, [255, 0, 0]], [4, None, None, solid, [255, 0, 0]], [5, None, None, solid, [255, 0, 0]]]",
+            "[[0, None, None, 'solid', [255.0, 50.0, 0.0]], [1, None, None, 'solid', [255.0, 50.0, 0.0]], [2, None, None, 'solid', [255.0, 50.0, 0.0]], [3, None, None, 'solid', [255.0, 50.0, 0.0]], [4, None, None, 'solid', [255.0, 50.0, 0.0]], [5, None, None, 'solid', [255.0, 50.0, 0.0]]]",
+            null
+        ],
+        [
+            22,
+            true,
+            null,
+            "[[0, None, None, 'solid', [50.0, 255.0, 0.0]], [1, None, None, 'solid', [50.0, 255.0, 0.0]], [2, None, None, 'solid', [50.0, 255.0, 0.0]], [3, None, None, 'solid', [50.0, 255.0, 0.0]], [4, None, None, 'solid', [50.0, 255.0, 0.0]], [5, None, None, 'solid', [50.0, 255.0, 0.0]]]",
             null
         ],
         [
             37,
             true,
             null,
-            "[[0, None, None, solid, [0, 0, 255]], [1, None, None, solid, [0, 0, 255]], [2, None, None, solid, [0, 0, 255]], [3, None, None, solid, [0, 0, 255]], [4, None, None, solid, [0, 0, 255]], [5, None, None, solid, [0, 0, 255]]]",
-            null
-        ],
-        [
-            23,
-            true,
-            null,
-            "[[0, None, None, solid, [0, 255, 0]], [1, None, None, solid, [0, 255, 0]], [2, None, None, solid, [0, 255, 0]], [3, None, None, solid, [0, 255, 0]], [4, None, None, solid, [0, 255, 0]], [5, None, None, solid, [0, 255, 0]]]",
+            "[[0, None, None, 'solid', [0.0, 0.0, 255.0]], [1, None, None, 'solid', [0.0, 0.0, 255.0]], [2, None, None, 'solid', [0.0, 0.0, 255.0]], [3, None, None, 'solid', [0.0, 0.0, 255.0]], [4, None, None, 'solid', [0.0, 0.0, 255.0]], [5, None, None, 'solid', [0.0, 0.0, 255.0]]]",
             null
         ],
         [
             3,
             true,
             null,
-            "[[0, None, None, rainbow, []], [1, None, None, rainbow, []], [2, None, None, rainbow, []], [3, None, None, rainbow, []], [4, None, None, rainbow, []], [5, None, None, rainbow, []]]",
+            "[[0, None, None, 'solid', [205.0, 75.0, 75.0]], [1, None, None, 'solid', [205.0, 75.0, 75.0]], [2, None, None, 'solid', [205.0, 75.0, 75.0]], [3, None, None, 'solid', [205.0, 75.0, 75.0]], [4, None, None, 'solid', [205.0, 75.0, 75.0]], [5, None, None, 'solid', [205.0, 75.0, 75.0]]]",
             null
         ],
         [
-            3,
-            false,
+            56,
+            true,
             null,
-            null,
+            "[[0, None, None, 'solid', [250.0, 70.0, 50.0]], [1, None, None, 'solid', [250.0, 70.0, 50.0]], [2, None, None, 'solid', [250.0, 70.0, 50.0]], [3, None, None, 'solid', [250.0, 70.0, 50.0]], [4, None, None, 'solid', [250.0, 70.0, 50.0]], [5, None, None, 'solid', [250.0, 70.0, 50.0]]]",
             null
         ],
         [
-            3,
-            false,
+            44,
+            true,
             null,
-            null,
+            "[[0, None, None, 'rainbow', []], [1, None, None, 'rainbow', []], [2, None, None, 'rainbow', []], [3, None, None, 'rainbow', []], [4, None, None, 'rainbow', []], [5, None, None, 'rainbow', []]]",
             null
         ],
         [
@@ -131,24 +131,24 @@
     ],
     [
         [
-            3,
-            false,
+            5,
+            true,
             null,
-            null,
+            "[[0, None, None, 'solid', [255.0, 0.0, 0.0]], [1, None, None, 'solid', [255.0, 0.0, 0.0]], [2, None, None, 'solid', [255.0, 0.0, 0.0]], [3, None, None, 'solid', [255.0, 0.0, 0.0]], [4, None, None, 'solid', [255.0, 0.0, 0.0]], [5, None, None, 'solid', [255.0, 0.0, 0.0]]]",
             null
         ],
         [
-            0,
-            false,
+            29,
+            true,
             null,
-            null,
+            "[[0, None, None, 'solid', [50.0, 50.0, 255.0]], [1, None, None, 'solid', [205.0, 75.0, 75.0]], [2, None, None, 'solid', [50.0, 50.0, 255.0]], [3, None, None, 'solid', [50.0, 50.0, 255.0]], [4, None, None, 'solid', [205.0, 75.0, 75.0]], [5, None, None, 'solid', [50.0, 50.0, 255.0]]]",
             null
         ],
         [
-            3,
-            false,
+            9,
+            true,
             null,
-            null,
+            "[[0, None, None, solid, [255, 0, 0], None], [1, None, None, solid, [255, 100, 0], None], [2, None, None, solid, [255, 0, 0], None], [3, None, None, solid, [255, 0, 0], None], [4, None, None, solid, [255, 100, 0], None], [5, None, None, solid, [255, 0, 0], None]]",
             null
         ],
         [
@@ -196,66 +196,66 @@
     ],
     [
         [
-            3,
-            false,
+            21,
+            true,
             null,
-            null,
+            "[[0, 'bounce', [bpm, 8], None, None]]",
             null
         ],
         [
-            3,
-            false,
+            21,
+            true,
             null,
-            null,
+            "[[1, 'bounce', [bpm, 8], None, None]]",
             null
         ],
         [
-            3,
-            false,
+            21,
+            true,
             null,
-            null,
+            "[[2, 'bounce', [bpm, 8], None, None]]",
             null
         ],
         [
-            3,
-            false,
+            21,
+            true,
             null,
-            null,
+            "[[3, 'bounce', [bpm, 8], None, None]]",
             null
         ],
         [
-            3,
-            false,
+            21,
+            true,
             null,
-            null,
+            "[[4, 'bounce', [bpm, 8], None, None]]",
             null
         ],
         [
-            3,
-            false,
+            21,
+            true,
             null,
-            null,
+            "[[5, 'bounce', [bpm, 8], None, None]]",
             null
         ],
         [
-            3,
-            false,
+            21,
+            true,
             null,
-            null,
+            "[[0, bounce, [bpm, 8], None, None, None], [1, bounce, [bpm, 8], None, None, None], [2, bounce, [bpm, 8], None, None, None]]",
             null
         ],
         [
-            3,
-            false,
+            21,
+            true,
             null,
-            null,
+            "[[3, bounce, [bpm, 8], None, None, None], [4, bounce, [bpm, 8], None, None, None], [5, bounce, [bpm, 8], None, None, None]]",
             null
         ],
         [
-            3,
-            false,
-            null,
-            null,
+            33,
+            true,
+            "{\"on\":True,\"seg\":{\"fx\":76,\"sx\":255,\"fxdef\":False},\"v\":True,\"time\":1759527492}",
+            "[[0, None, None, None, None, None]]",
             null
         ]
     ],
@@ -313,7 +313,7 @@
             3,
             false,
             null,
-            null,
+            "[[0, None, None, rainbow, None, None]]",
             null
         ],
         [
@@ -375,10 +375,10 @@
             null
         ],
         [
-            0,
-            false,
+            36,
+            true,
             null,
-            null,
+            "[[0, None, None, rainbow, None, None], [3, None, None, rainbow, None, None]]",
             null
         ],
         [
@@ -436,14 +436,14 @@
             9,
             true,
             null,
-            "[[0, pulse, [time.time(), 10], None, None], [1, pulse, [time.time(), 10], None, None], [2, pulse, [time.time(), 10], None, None], [3, pulse, [time.time(), 10], None, None], [4, pulse, [time.time(), 10], None, None], [5, pulse, [time.time(), 10], None, None]]",
+            "[[0, pulse, [time.time(), 10], None, None, None], [1, pulse, [time.time(), 10], None, None, None], [2, pulse, [time.time(), 10], None, None, None]]",
             null
         ],
         [
-            10,
-            false,
+            9,
+            true,
             null,
-            null,
+            "[[3, pulse, [time.time()], None, None, None], [4, pulse, [time.time()], None, None, None], [5, pulse, [time.time()], None, None, None]]",
             null
         ],
         [
@@ -501,14 +501,14 @@
             57,
             true,
             null,
-            "[[0, sinWave, [bpm], None, None], [1, sinWave, [bpm], None, None], [2, sinWave, [bpm], None, None], [3, sinWave, [bpm], None, None], [4, sinWave, [bpm], None, None], [5, sinWave, [bpm], None, None]]",
+            "[[0, sinWave, [bpm], None, None, None], [1, sinWave, [bpm], None, None, None], [2, sinWave, [bpm], None, None, None]]",
             null
         ],
         [
-            0,
-            false,
+            57,
+            true,
             null,
-            null,
+            "[[3, sinWave, [bpm], None, None, None], [4, sinWave, [bpm], None, None, None], [5, sinWave, [bpm], None, None, None]]",
             null
         ],
         [
@@ -521,10 +521,31 @@
     ],
     [
         [
-            3,
-            false,
+            0,
+            true,
             null,
+            "[[0, None, None, None, None, None]]",
+            null
+        ],
+        [
+            0,
+            true,
             null,
+            "[[0, None, None, None, None, None]]",
+            null
+        ],
+        [
+            0,
+            true,
+            null,
+            "[[0, None, None, None, None, None]]",
+            null
+        ],
+        [
+            0,
+            true,
+            null,
+            "[[0, None, None, None, None, None]]",
             null
         ],
         [
@@ -542,38 +563,17 @@
             null
         ],
         [
-            3,
+            0,
             false,
             null,
-            null,
+            "[[0, None, None, None, None], [1, None, None, None, None], [2, None, None, None, None], [3, None, None, None, None], [4, None, None, None, None], [5, None, None, None, None]]",
             null
         ],
         [
-            3,
+            0,
             false,
             null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            5,
-            false,
-            null,
-            null,
-            null
-        ],
-        [
-            3,
-            false,
-            null,
-            null,
+            "[[0, None, None, None, None, None]]",
             null
         ],
         [
